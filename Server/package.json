@@ -1,0 +1,14 @@
+{
+  "name": "dcms-server",
+  "version": "0.0.1",
+  "description": "Server package for DCMS system",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "cms"
+  ],
+  "author": "Glenn Lundberg",
+  "license": "ISC"
+}
