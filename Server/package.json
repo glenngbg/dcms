@@ -10,5 +10,8 @@
     "cms"
   ],
   "author": "Glenn Lundberg",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
 }
