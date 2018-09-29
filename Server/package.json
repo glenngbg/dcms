@@ -8,7 +8,7 @@
     "lint": "eslint \"**/*.js\"",
     "start": "babel-node ./index.js",
     "publish-coverage": "codecov -t e6433892-1432-497e-8ad4-69ca22e17676",
-    "start-dev": "nodemon --exec npm run babel-node -- ./index.js",
+    "start-dev": "nodemon --exec npm run test & babel-node -- ./index.js",
     "babel-node": "babel-node"
   },
   "keywords": [
