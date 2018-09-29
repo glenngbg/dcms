@@ -3,5 +3,8 @@
   "editor.tabSize": 2,
   "mocha.requires": [
     "babel-register"
-  ]
+  ],
+  "files.insertFinalNewline": true,
+  "prettier.singleQuote": true,
+  "javascript.format.placeOpenBraceOnNewLineForControlBlocks": true
 }

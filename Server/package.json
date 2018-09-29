@@ -4,10 +4,12 @@
   "description": "Server package for DCMS system",
   "main": "index.js",
   "scripts": {
-    "test": "nyc --reporter=lcov mocha --require babel-core/register --exit",
+    "test": "npm run lint & nyc --reporter=lcov mocha --require babel-core/register --exit",
     "lint": "eslint \"**/*.js\"",
-    "start": "npm run lint & babel-node ./index.js",
-    "publish-coverage": "codecov -t e6433892-1432-497e-8ad4-69ca22e17676"
+    "start": "babel-node ./index.js",
+    "publish-coverage": "codecov -t e6433892-1432-497e-8ad4-69ca22e17676",
+    "start-dev": "nodemon --exec npm run test & babel-node -- ./index.js",
+    "babel-node": "babel-node"
   },
   "keywords": [
     "cms"
@@ -28,6 +30,7 @@
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
     "mocha": "^5.2.0",
+    "nodemon": "^1.18.4",
     "nyc": "^13.0.1"
   }
 }
