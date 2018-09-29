@@ -4,6 +4,7 @@ node_js:
 before_install: cd Server
 install:
   - npm install -g codecov
+  - npm install
 script:
   - npm run test
   - codecov
