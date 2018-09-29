@@ -4,7 +4,9 @@
   "description": "Server package for DCMS system",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+	"test": "test",
+	"lint":"eslint \"**/*.js\"",
+	"start":"npm run lint & node ./index.js"
   },
   "keywords": [
     "cms"
@@ -16,6 +18,8 @@
   },
   "repository": "https://github.com/glenngbg/dcms",
   "devDependencies": {
-    "eslint": "^5.6.1"
+    "eslint": "^5.6.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0"
   }
 }
