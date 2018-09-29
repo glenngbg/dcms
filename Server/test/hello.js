@@ -1,16 +1,13 @@
 import chai from 'chai';
 import chaiHttp from 'chai-http';
-import {
-  describe,
-  it,
-} from 'mocha';
+import server from '../index';
 
 chai.should();
 chai.use(chaiHttp);
 
 describe('/GET hello', () => {
   it('it should GET the hello world response', (done) => {
-    chai.request('http://localhost:3000')
+    chai.request(server)
       .get('/')
       .end((err, res) => {
         res.should.have.status(200);
