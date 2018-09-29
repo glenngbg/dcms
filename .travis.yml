@@ -3,4 +3,5 @@ node_js:
   - "node"
 before_install: cd Server
 script:
+  - npm run test
   - npm run publish-coverage
