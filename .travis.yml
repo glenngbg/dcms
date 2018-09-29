@@ -2,9 +2,5 @@ language: node_js
 node_js:
   - "node"
 before_install: cd Server
-install:
-  - npm install -g codecov
-  - npm install
 script:
-  - npm run test
-  - codecov
+  - npm run publish-coverage
