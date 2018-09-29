@@ -4,8 +4,8 @@
   "description": "Server package for DCMS system",
   "main": "index.js",
   "scripts": {
-    "test": "test",
-	"lint": "eslint \"**/*.js\"",
+    "test": "mocha --require babel-core/register",
+    "lint": "eslint \"**/*.js\"",
     "start": "npm run lint & babel-node ./index.js"
   },
   "keywords": [
@@ -20,8 +20,11 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.0",
     "eslint": "^5.6.1",
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.14.0"
+    "eslint-plugin-import": "^2.14.0",
+    "mocha": "^5.2.0"
   }
 }
