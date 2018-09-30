@@ -1,20 +1,18 @@
 import express from 'express';
-import Type from './models/type';
-import Property from './models/property';
+import TypeService from './services/TypeService';
+import TypeRepository from './repositories/TypesRepository';
 
 const app = express();
 const port = 3000;
+const typeRepository = new TypeRepository();
+const typeService = new TypeService(typeRepository);
 
-const types = [
-  new Type('content', [new Property('name', 'string'), new Property('preamble', 'string'), new Property('body', 'string')]),
-  new Type('navigationitem', [new Property('title', 'string'), new Property('url', 'string'), new Property('parent', 'string')]),
-];
 
 app.get('/', (req, res) => res.send({
   text: 'Hello World!',
 }));
 
-app.get('/types', (req, res) => res.send(types));
+app.get('/types', (req, res) => res.send(typeService.getAll()));
 
 if (!module.parent) { app.listen(port, () => console.log(`Example app listening on port ${port}!`)); }
 // for testing
