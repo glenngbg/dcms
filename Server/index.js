@@ -14,6 +14,7 @@ class App {
 
   async init() {
     this.app = express();
+
     this.app.use(expressWinston.logger({
       winstonInstance: logger,
     }));
