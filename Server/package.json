@@ -25,12 +25,12 @@
     "mongodb-memory-server": "^2.4.0",
     "babel-cli": "^6.26.0",
     "winston": "^3.1.0",
-    "babel-plugin-transform-runtime": "^6.23.0"
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0"
   },
   "repository": "https://github.com/glenngbg/dcms",
   "devDependencies": {
     "babel-polyfill": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
     "chai": "^4.2.0",
     "chai-http": "^4.2.0",
     "codecov": "^3.1.0",
