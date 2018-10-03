@@ -4,11 +4,12 @@
   "description": "Server package for DCMS system",
   "main": "index.js",
   "scripts": {
-    "test": "npm run lint & nyc --reporter=lcov mocha --require babel-core/register --exit",
+    "test": "npm run lint & nyc --reporter=lcov mocha --require babel-core/register --exit --timeout 60000",
     "lint": "eslint \"**/*.js\"",
-    "start": "babel-node ./index.js",
+    "start": "babel-node ./main.js",
     "publish-coverage": "codecov -t e6433892-1432-497e-8ad4-69ca22e17676",
-    "start-dev": "nodemon --exec npm run test & babel-node -- ./index.js",
+    "test-then-run": "npm run test && npm run start",
+    "start-dev": "nodemon --exec npm run test-then-run",
     "babel-node": "babel-node"
   },
   "keywords": [
@@ -17,11 +18,16 @@
   "author": "Glenn Lundberg",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.3"
+    "convict": "^4.4.0",
+    "express": "^4.16.3",
+    "mongodb": "^3.1.6",
+    "mongodb-memory-server": "^2.4.0"
   },
   "repository": "https://github.com/glenngbg/dcms",
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "chai": "^4.2.0",
     "chai-http": "^4.2.0",

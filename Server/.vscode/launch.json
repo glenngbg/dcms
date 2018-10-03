@@ -5,14 +5,31 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Nodemon",
       "type": "node",
       "request": "launch",
-      "runtimeExecutable": "${workspaceFolder}/node_modules/nodemon/bin/nodemon.js",
-      "program": "${workspaceFolder}/index.js",
-      "restart": true,
+      "name": "Launch via NPM",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run-script",
+        "start-dev"
+      ],
+      "port": 9229
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Mocha All",
+      "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha",
+      "args": [
+          "--timeout",
+          "999999",
+          "--colors",
+          "--require",
+          "babel-core/register",
+          "--exit",
+          "${workspaceFolder}/test"
+      ],
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen"
-    }
-  ]
+  },  ]
 }
