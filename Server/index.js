@@ -1,25 +1,31 @@
 import express from 'express';
+import expressWinston from 'express-winston';
 import config from './config/config';
 import TypeService from './services/TypeService';
 import TypeRepository from './repositories/TypesRepository';
 import DatabaseFactory from './util/DatabaseFactory';
+import logger from './logger';
+
 
 class App {
   constructor() {
-    console.log('App Created.');
+    logger.debug('App Created.');
   }
 
   async init() {
     this.app = express();
+    this.app.use(expressWinston.logger({
+      winstonInstance: logger,
+    }));
 
-    console.log(config.toString());
+    logger.debug(config.toString());
     const databaseFactory = new DatabaseFactory();
     const db = await databaseFactory.getClient();
     const typeRepository = new TypeRepository(db);
 
     const typeService = new TypeService(typeRepository);
 
-    console.log('Setting up endpoints');
+    logger.debug('Setting up endpoints');
 
     this.app.get('/', (req, res) => res.send({
       text: 'Hello World!',
