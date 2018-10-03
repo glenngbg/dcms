@@ -1,7 +1,12 @@
 language: node_js
 node_js:
-  - "node"
+- node
 before_install: cd Server
 script:
-  - npm run test
-  - npm run publish-coverage
+- npm run test
+- npm run publish-coverage
+deploy:
+  provider: heroku
+  app: dcms-test
+  api_key:
+    secure: GNaaDyNDQhKbzFm8Fzim0K1Z/y8+7eGftuyHlYBxA8thGjg5jRQOzYWQx8Vzyj9HPmGp5goltfdD2CEc4GzYxkKK+iOPoWhypcRI4vZf+Dv7i40tN0uYLL6HEwHm+pRAr49s695QY8kEou7P68ecahinTXjT4KELomR/LvviIqKsKS3mnS2lKKJeY90DjIDgOxUNCUbGdCdGoKfosNkoPF265dCyfy2rb8yXpU5bSoSTWkRbFqjni5lFPV8iId4eFrwCd5ctPOP99eq6vpI3OM/oDfCf2UGeygNXEQL/903oMDzv1BMOgs43Jwl2Wnk/SMQZKlnxMUG9ZEBihh5l6D1nxiGbvNhTCgGAEZDxt5fzLhntCBMrYrxostzt87rvM+29Gz4+OkgtY5N9UoE82eO7E1+kIwL2vaCDQqoMnX+hd/0oKwt92CL/mRp1NHFFBrwnigz9HiqBQs6tYYunoyPdkMk3W75+P3Y2a8fVU0dn9DrPsyfbFUIr1dmH/yB/fVFtffUCBXMDzVjk+0TDgx9WspfN1TLyL0uCLjgEuSpk9eVBCtg6g1lndKxo7o/d3tiFXt+GMIsD+HiRYKAuZ34C4Mb5dnpxjPG79KayH7dPUHDUzjPBNXKD1ev58cK7DR7bf+kEsVi1CrGjLbmQImDIAQ1nT7zI0dUvkS+4bKc=
