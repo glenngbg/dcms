@@ -1,3 +1,5 @@
+import logger from '../logger';
+
 export default class {
   constructor(db) {
     if (!db) {
@@ -8,9 +10,10 @@ export default class {
 
   async findAll() {
     try {
+      logger.debug('getting data from db');
       return await this.db.collection('types').find().toArray();
     } catch (err) {
-      console.log(err);
+      logger.error(err);
       return [];
     }
   }
