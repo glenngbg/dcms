@@ -3,7 +3,7 @@ export default class TypeService {
     this.repository = repository;
   }
 
-  getAll() {
+  async getAll() {
     return this.repository.findAll();
   }
 }

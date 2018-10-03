@@ -1,19 +1,36 @@
 import express from 'express';
+import config from './config/config';
 import TypeService from './services/TypeService';
 import TypeRepository from './repositories/TypesRepository';
+import DatabaseFactory from './util/DatabaseFactory';
 
-const app = express();
-const port = 3000;
-const typeRepository = new TypeRepository();
-const typeService = new TypeService(typeRepository);
+class App {
+  constructor() {
+    console.log('App Created.');
+  }
 
+  async init() {
+    this.app = express();
 
-app.get('/', (req, res) => res.send({
-  text: 'Hello World!',
-}));
+    console.log(config.toString());
+    const databaseFactory = new DatabaseFactory();
+    const db = await databaseFactory.getClient();
+    const typeRepository = new TypeRepository(db);
 
-app.get('/types', (req, res) => res.send(typeService.getAll()));
+    const typeService = new TypeService(typeRepository);
 
-if (!module.parent) { app.listen(port, () => console.log(`Example app listening on port ${port}!`)); }
-// for testing
-module.exports = app;
+    console.log('Setting up endpoints');
+
+    this.app.get('/', (req, res) => res.send({
+      text: 'Hello World!',
+    }));
+
+    this.app.get('/types', async (req, res) => {
+      const types = await typeService.getAll();
+      res.send(types);
+    });
+
+    return this.app;
+  }
+}
+export default App;

@@ -1,12 +1,17 @@
-import Type from '../models/type';
-import Property from '../models/property';
-
 export default class {
-  findAll() {
-    this.types = [
-      new Type('content', [new Property('name', 'string'), new Property('preamble', 'string'), new Property('body', 'string')]),
-      new Type('navigationitem', [new Property('title', 'string'), new Property('url', 'string'), new Property('parent', 'string')]),
-    ];
-    return this.types;
+  constructor(db) {
+    if (!db) {
+      throw new Error('Repository must have an db reference');
+    }
+    this.db = db;
+  }
+
+  async findAll() {
+    try {
+      return await this.db.collection('types').find().toArray();
+    } catch (err) {
+      console.log(err);
+      return [];
+    }
   }
 }
