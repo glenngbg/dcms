@@ -8,7 +8,7 @@ script:
 deploy:
   provider: heroku
   api_key:
-    secure: 3wSgVofQ3V/urA8OoJHaZdN5AU6f32K33bJFjVFYzdoZWmpBl1pY7au2irOn6fr+dW5F0wGFlgrgX41GabRJ3rHngFHif6pj4zlO+DzV6hYMZckSki68iFxZh6eD6qreYvMAtFvcMhhC85dCbuIFyv6zjLAfTqKCDW9vT4jnRmrG3fhb0f7Xwx4ccmvmlQObp6buLjrElGj+9uRSCsRISbXSv0gKGU7dERo84MsHraTU2YAaZeW/mjH7rI/ecJBBpnZgfGpyFxrA0tsBjHurGY4gjWDP/Iehws6Gb4znK2b4Le0xoz5mwpc3wkFU1MutVmoGavV95MhikCRIwNsQIP61WITSeTG0+CxSNiJ8dHTP2UtEf4yv48RGrO8IJxhuxsfnGqZJzL7bXT64XNXyc8lP8zuOLpSPvQzXMJoWp0DSREZaGNr3sGenpVsgdJ9NeWfXoVN63MtiYbBJOhphcZ/ZlnNe3IsnM500RsMAL3vRnr/aj1+xgWl8H/3z+vc7A8GWLQr+ZOHJTNd6mvK+M1efcQUTIuGbn1/abIERYwMMoRP/BQhOt8wD5FPoC2CvFKPXHGJ2bwKadeZ1rvwB9ACgv0BacaqQaOeBcCqKJ4I4fG6UCE8tjT+BP+QXzPPbn9aGdba8jhclSq7d1qZ9j+hIfvCaRKiuSTif3F9L2S0=
+    secure: 053b5a54-1ebc-4913-b1d2-34e50abc4fb1
   app: dcms-test
   on:
     repo: glenngbg/dcms
