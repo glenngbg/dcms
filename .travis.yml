@@ -11,4 +11,4 @@ deploy:
   app: dcms-test
   on:
     repo: glenngbg/dcms
-    branch: develop
+    branch: monitoring
