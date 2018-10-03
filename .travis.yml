@@ -1,7 +1,14 @@
 language: node_js
 node_js:
-  - "node"
+- node
 before_install: cd Server
 script:
-  - npm run test
-  - npm run publish-coverage
+- npm run test
+- npm run publish-coverage
+deploy:
+  provider: heroku
+  api_key: 053b5a54-1ebc-4913-b1d2-34e50abc4fb1
+  app: dcms-test
+  on:
+    repo: glenngbg/dcms
+    branch: develop
