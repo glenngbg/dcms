@@ -23,11 +23,8 @@
     "express-winston": "^3.0.0",
     "mongodb": "^3.1.6",
     "mongodb-memory-server": "^2.4.0",
-<<<<<<< HEAD
-    "babel-cli": "^6.26.0"
-=======
+    "babel-cli": "^6.26.0",
     "winston": "^3.1.0"
->>>>>>> origin/develop
   },
   "repository": "https://github.com/glenngbg/dcms",
   "devDependencies": {    
