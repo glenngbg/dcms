@@ -1,2 +1,2 @@
-web: pm2 start npm -- start
+web: pm2-runtime start npm -- start
 
