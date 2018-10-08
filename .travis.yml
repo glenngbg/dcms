@@ -7,7 +7,7 @@ script:
 - npm run publish-coverage
 deploy:
   provider: heroku
-  api_key: 053b5a54-1ebc-4913-b1d2-34e50abc4fb1
+  api_key: b5eaf75b-211b-4275-90e0-18e2bd0df6e7
   app: dcms-test
   on:
     repo: glenngbg/dcms
